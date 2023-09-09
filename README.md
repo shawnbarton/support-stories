@@ -1,2 +1,2 @@
 # support-stories
-An archive of resolved technical issues. I intend to write these especially for specific cases where I was unable to find an answer online.
+An archive of technical issues I have worked on for which I was not able to readily find an answer online.
