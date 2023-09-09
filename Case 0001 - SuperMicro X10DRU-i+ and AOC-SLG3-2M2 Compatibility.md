@@ -37,7 +37,7 @@ I was able to add NVMe drivers to the latest BIOS. Afterwards, I was able to boo
 
 You can either roll your own BIOS modification, as described below, or use my modified file.
 
-**This modified BIOS file is provided solely as a convinience for you. I will provide no warranty for it or any resulting issues. You are choosing to use this file entirely AT YOUR OWN RISK.**
+**This modified BIOS file is provided solely as a convenience for you. I will provide no warranty for it or any resulting issues. You are choosing to use this file entirely AT YOUR OWN RISK.**
 
 ### Steps:
 
