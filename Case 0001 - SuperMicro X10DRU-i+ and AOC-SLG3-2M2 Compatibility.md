@@ -35,7 +35,7 @@ Supermicro support states that the add-in card being "validated" means nothing m
 
 I was able to add NVMe drivers to the latest BIOS. Afterwards, I was able to boot from the NVMe drives on the add-in card. They now work as expected.
 
-You can either roll your own BIOS modification, as described below, or use my modified file.
+You can either roll your own BIOS modification, as described below, or [use my modified file which you can find in this repository's Releases](https://github.com/shawnbarton/tech-cases/releases/tag/Case0001).
 
 **This modified BIOS file is provided solely as a convenience for you. I will provide no warranty for it or any resulting issues. You are choosing to use this file entirely AT YOUR OWN RISK.**
 
