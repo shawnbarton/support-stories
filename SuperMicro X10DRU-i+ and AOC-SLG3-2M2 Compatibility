@@ -1,0 +1,26 @@
+Server Hardware:
+
+Chasis & Motherboard: SuperMicro CSE-829U X10DRU-i+ 2U 12x 3.5" (LFF)
+Processor(s): 2 x Intel Xeon E5-2660 V4 - 14-Core 28-Threads 2.00GHz (3.20GHz Boost, 35MB Cache, 105W TDP)
+Heatsink(s):  2 x SuperMicro X10DRi LGA-2011 2U Heatsink
+Memory (RAM): 4 x 32GB - DDR4 2400MHz (PC4-19200, 2Rx4)
+RAID: 1 x Adaptec 71605 FH 1GB
+Backplane: BPN-SAS3-826EL1
+Network: Broadcom BCM57810S Dual Port - 10GbE SFP+ Low Profile PCIe-x8 CNA 
+GPU: PNY nVidia RTX A2000 6GB
+Power Supply(s): 2 x SuperMicro (PWS-1K02A-1R) 1U 1000W Titanium Hot-Swap PSU
+
+Issue relates to add-in card:
+Model: SuperMicro AOC-SLG3-2M2
+Product overview: 
+OEM: https://www.supermicro.com/en/products/accessories/addon/AOC-SLG3-2M2.php
+Archive: https://web.archive.org/web/20230128074158/https://www.supermicro.com/en/products/accessories/addon/AOC-SLG3-2M2.php
+
+Issue description:
+I purchased an AOC-SLG3-2M2 for this server so that nvme drives could be added as the boot and OS drives. The motherboard (X10DRU-i+) supports pci-e bifurcation and is listed on the add-in card's "Validated Platforms" list. After installation of the card I applied the correct BIOS settings but the card would not show as a boot device.
+
+Resolution:
+SuperMicro states that the add-in card's "validated platforms" list means nothing more than "the card works", not that all features are available, which in this case is the feature of booting from the device.
+I was able to add nvme drivers to the latest BIOS. Afterwards I was able to boot from the nvme drives on the add-in card.
+
+[additional technical details pending]
