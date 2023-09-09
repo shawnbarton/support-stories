@@ -11,10 +11,13 @@ GPU: PNY nVidia RTX A2000 6GB
 Power Supply(s): 2 x SuperMicro (PWS-1K02A-1R) 1U 1000W Titanium Hot-Swap PSU
 
 Issue relates to add-in card:
+
 Model: SuperMicro AOC-SLG3-2M2
 Product overview: 
 OEM: https://www.supermicro.com/en/products/accessories/addon/AOC-SLG3-2M2.php
 Archive: https://web.archive.org/web/20230128074158/https://www.supermicro.com/en/products/accessories/addon/AOC-SLG3-2M2.php
+
+nvme Drives used: 2 x Samsung SSD 970 EVO Plus 1TB
 
 Issue description:
 I purchased an AOC-SLG3-2M2 for this server so that nvme drives could be added as the boot and OS drives. The motherboard (X10DRU-i+) supports pci-e bifurcation and is listed on the add-in card's "Validated Platforms" list. After installation of the card I applied the correct BIOS settings but the card would not show as a boot device.
