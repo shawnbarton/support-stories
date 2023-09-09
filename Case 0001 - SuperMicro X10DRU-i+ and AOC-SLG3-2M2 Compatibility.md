@@ -70,3 +70,76 @@ You can either roll your own BIOS modification, as described below, or use my mo
 8. Reinstalled OS on NVMe drive by booting from a USB installer in UEFI mode
     - Ubuntu 22.04
 9. The OS on the NVMe drive is visible in the BIOS and is bootable
+
+## Support Interaction
+
+- Supermicro Support
+- *Ticket Lifespan 2023-08-29 - 2023-08-31*
+- *Formalities removed to shorten content*
+
+**Me:**
+
+> I purchased a new AOC-SLG3-2M2 to upgrade our X10DRU-I+ and bring this older machine back into modern times. The card is plugged into the RSC-W2-66 riser. I have the latest system BIOS (v3.5) and have enabled bifurcation on the slot (4x4x4x4). I am able to see and work with both nvme drives when an OS is booted, however I seem to be unable to set either of these nvme drives to be the boot device.
+Could you let me know if I'm missing some setting to make that work?
+
+**Supermicro Engineer:**
+
+> Have you had a chance to setting "the NVMe Firmware Source set to AMI Native Support".  For your reference, please click on the attached link below. (Chapter 3-3 Additional Settings - page# 19)
+>
+> https://www.supermicro.com/manuals/other/AOC-SLG3-2M2.pdf
+
+**Me:**
+
+> I am unable to find this particular option (related to nvme firmware) in my BIOS. The latest update release notes do have a cryptic reference to some sort of nvme support though.
+The issue also occurs if the card is plugged into the other AOC-2UR68-i2xt riser - no change there. The slots are set to EFI OPROM in Advanced - PCIe/PCI/PnP Configuration (instead of Legacy).
+
+**Supermicro Engineer:**
+
+> Thanks for the information!  Per my co-worker, please install OS with EFI mode into the NVMe drive then it will boot from this.
+>
+> P.S since this X10DRU-i+ does not supports NVME onboard; therfore, in the BIOS does not have "NVMe Firmware Source -> AMI Native Support" 
+
+**Me:**
+
+> I currently have the EFI version of Ubuntu Server 22.04 installed on the nvme drive in slot 0 (1?) and it is not detected as boot media.
+```
+>> Checking Media Presence .....
+
+>> No Media Present ....
+
+READY TO BOOT ...
+```
+> Additionally, the drives are not listed anywhere in the BIOS as a selectable boot option.
+
+**Supermicro Engineer:**
+
+> For your reference, please click on the atached link below (Section 4-7 Boot Settings, Page #104-105) to see if it show the OS drive in "Hard Disk Drive BBS Priorities", if yes then change to "UEFI Boot Order #1"
+>
+> https://www.supermicro.com/manuals/motherboard/C612/MNL-1597.pdf
+
+**Me:**
+
+> it does not. There is no drive or any other reference to this adapter visible in the BIOS as far as I can find, regardless of which riser I have it in.
+
+**Supermicro Engineer:**
+
+> Just received feedback from our BIOS engnieer that  X10DRU did not support native NVMe so it can't boot if the M.2 device did not have it's own uEFI driver.
+>
+> We are very sorry for any inconvinient that might cause you.
+
+**Me:**
+
+> is it then an error that the X10DRU-i+ specifically is listed as validated on the card specs page?
+>
+> https://www.supermicro.com/en/products/accessories/addon/AOC-SLG3-2M2.php
+>
+> Is there any chance this can be corrected with a BIOS update since it may just be a missing driver or no chance?
+
+**Supermicro Engineer:**
+
+> Please see below feedback from our engineer to see if it helps.
+>
+> "First, listed as validated did not mean support M.2 boot, M.2 still functional with X10DRU-i+.
+Second, it's NOT A ISSUE. It's company decision at that time."
+>
+> Looked like BIOS won't be update for supporting M.2 boot.
