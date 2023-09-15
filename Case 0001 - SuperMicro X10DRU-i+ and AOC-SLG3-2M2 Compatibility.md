@@ -74,7 +74,7 @@ You can either roll your own BIOS modification, as described below, or [use my m
 ## Support Interaction
 
 - Supermicro Support
-- *Ticket Lifespan 2023-08-29 - 2023-08-31*
+- *Ticket Lifespan: 2023-08-29 - 2023-08-31*
 - *Formalities removed to shorten content*
 
 **Me:**
